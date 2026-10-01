@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://webtools-labs.com/furima-tedori-simulator/sitemap.xml
+Sitemap: https://webtools-labs.com/frima-tedori-simulator/sitemap.xml

@@ -33,20 +33,20 @@
 <meta property="og:site_name" content="webtools-labs">
 <meta property="og:title" content="フリマ手取りシミュレーター | 手数料+送料をまとめて計算">
 <meta property="og:description" content="メルカリ・ラクマ・Yahoo!フリマの手数料と最安送料をまとめて計算。目標の手取り額からいくらで出品すべきかも逆算できます。">
-<meta property="og:url" content="https://webtools-labs.com/furima-tedori-simulator/">
-<meta property="og:image" content="https://webtools-labs.com/furima-tedori-simulator/og-image.png">
+<meta property="og:url" content="https://webtools-labs.com/frima-tedori-simulator/">
+<meta property="og:image" content="https://webtools-labs.com/frima-tedori-simulator/og-image.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="フリマ手取りシミュレーター">
 <meta name="twitter:description" content="手数料+送料込みで「いくら残るか」「いくらで出すべきか」が一度に分かる無料ツール。">
-<meta name="twitter:image" content="https://webtools-labs.com/furima-tedori-simulator/og-image.png">
+<meta name="twitter:image" content="https://webtools-labs.com/frima-tedori-simulator/og-image.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "フリマ手取りシミュレーター",
-  "url": "https://webtools-labs.com/furima-tedori-simulator/",
+  "url": "https://webtools-labs.com/frima-tedori-simulator/",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Any",
   "description": "メルカリ・ラクマ・Yahoo!フリマの販売手数料と、サイズ・重さから自動選択した最安の発送方法をまとめて計算できる無料ツール。目標の手取り額から必要な出品価格も逆算できます。",
@@ -167,6 +167,15 @@ tr.best td:first-child { font-weight: 700; }
 .ref-table table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 460px; }
 .ref-table th, .ref-table td { padding: 0.5rem 0.5rem; border-bottom: 1px solid var(--line); text-align: left; }
 .ref-table td.num { font-variant-numeric: tabular-nums; text-align: right; }
+
+.related-tools { border: 1px solid var(--line); border-radius: 10px; padding: 1.3rem 1.4rem; margin: 2.5rem 0; }
+.related-tools h2 { margin: 0 0 0.9rem; }
+.related-tools ul { list-style: none; margin: 0; padding: 0; }
+.related-tools li { padding: 0.7rem 0; border-top: 1px solid var(--line); }
+.related-tools li:first-child { border-top: none; }
+.related-tools a { color: var(--accent); font-weight: 700; text-decoration: none; }
+.related-tools a:hover { text-decoration: underline; }
+.related-tools li p { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.85rem; }
 .ref-table tr.best td { font-weight: 700; background: var(--best-bg); }
 
 .disclaimer { font-size: 0.78rem; color: var(--muted); margin-top: 1rem; }
@@ -375,6 +384,24 @@ footer.site-footer a { color: var(--accent); }
     </div>
   </div>
 
+  <section class="related-tools">
+    <h2>フリマで使えるその他のツール</h2>
+    <ul>
+      <li>
+        <a href="https://webtools-labs.com/frima-tesuryo-hikaku/">フリマ手数料計算・比較ツール</a>
+        <p>メルカリ・ラクマ・Yahoo!フリマの販売手数料と振込手数料を一度に計算・比較できます。</p>
+      </li>
+      <li>
+        <a href="https://webtools-labs.com/frima-hasso-hikaku/">フリマ配送方法・送料比較ツール</a>
+        <p>ネコポス・ゆうパケット・宅急便など、サイズと重さから一番安い発送方法がすぐ分かります。</p>
+      </li>
+      <li>
+        <a href="https://webtools-labs.com/frima-kakuteishinkoku-checker/">フリマの確定申告 要否チェッカー</a>
+        <p>メルカリ・ラクマの売上について、確定申告が必要かどうかを質問に答えるだけで判定できます。</p>
+      </li>
+    </ul>
+  </section>
+
   <section>
     <h2>よくある質問</h2>
     <details class="faq-item">
@@ -577,7 +604,7 @@ footer.site-footer a { color: var(--accent); }
       var shareTextF = price.toLocaleString('ja-JP') + '円の商品、手数料+送料引いた手取りを比較したら\n' +
         '一番お得だったのは' + bestRowF.name + 'で ' + yen(bestRowF.net) + '\n\n' +
         'フリマ手取りシミュレーター';
-      setShareLinks(shareTextF, 'https://webtools-labs.com/furima-tedori-simulator/');
+      setShareLinks(shareTextF, 'https://webtools-labs.com/frima-tedori-simulator/');
     } else {
       var target = Math.max(0, Number(targetInput.value) || 0);
       resultHead.innerHTML = '<tr><th>サービス</th><th class="num">必要な出品価格</th><th class="num">内訳（手数料+送料+振込手数料）</th></tr>';
@@ -603,7 +630,7 @@ footer.site-footer a { color: var(--accent); }
       var shareTextR = target.toLocaleString('ja-JP') + '円手元に残したい場合、必要な出品価格を計算したら\n' +
         '一番安く出せるのは' + bestRowR.name + 'で ' + yen(bestRowR.needed) + '\n\n' +
         'フリマ手取りシミュレーター';
-      setShareLinks(shareTextR, 'https://webtools-labs.com/furima-tedori-simulator/');
+      setShareLinks(shareTextR, 'https://webtools-labs.com/frima-tedori-simulator/');
     }
   }
 
