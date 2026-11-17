@@ -174,7 +174,7 @@ tr.best td:first-child { font-weight: 700; }
 .best-tag { display: inline-block; font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); padding: 0.05rem 0.4rem; border-radius: 4px; margin-left: 0.4rem; font-weight: 500; }
 
 .ref-table { overflow-x: auto; }
-.ref-table table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 460px; }
+.ref-table table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 0; }
 .ref-table th, .ref-table td { padding: 0.5rem 0.5rem; border-bottom: 1px solid var(--line); text-align: left; }
 .ref-table td.num { font-variant-numeric: tabular-nums; text-align: right; }
 
@@ -265,6 +265,15 @@ footer.site-footer a { color: var(--accent); }
 .breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.1rem; }
 .breadcrumb a { color: var(--accent); text-decoration: none; }
 .breadcrumb a:hover { text-decoration: underline; }
+/* スマホで表が画面からはみ出さないように（2026-11-17） */
+@media (max-width: 600px) {
+  .ref-table table { font-size: 0.8rem; }
+  .ref-table th, .ref-table td { padding: 0.45rem 0.3rem; }
+  .ref-table th, .ref-table td:first-child { white-space: normal; }
+  .ref-table td.nw { white-space: nowrap; }
+  .ref-table th:first-child, .ref-table td:first-child { min-width: 5em; position: sticky; left: 0; z-index: 1; background: var(--bg); box-shadow: 1px 0 0 var(--line); }
+  .ref-table tr.best td:first-child, .ref-table tr.total td:first-child, .ref-table tr.next td:first-child, .ref-table tr.highlight td:first-child { background: var(--best-bg, var(--bg)); }
+}
 </style>
 </head>
 <body>
@@ -365,9 +374,9 @@ footer.site-footer a { color: var(--accent); }
       <table>
         <thead><tr><th>サービス</th><th class="num">手数料</th><th class="num">送料</th><th class="num">手取り</th></tr></thead>
         <tbody>
-          <tr><td>メルカリ(10%・振込手数料200円)</td><td class="num">▲300円</td><td class="num">▲180円</td><td class="num">2,320円</td></tr>
-          <tr><td>ラクマ(基本10%)</td><td class="num">▲300円</td><td class="num">▲180円</td><td class="num">2,520円</td></tr>
-          <tr class="best"><td>Yahoo!フリマ(5%) 最も手取りが多い</td><td class="num">▲150円</td><td class="num">▲180円</td><td class="num">2,670円</td></tr>
+          <tr><td>メルカリ(10%・振込手数料200円)</td><td class="num">▲300円</td><td class="num">▲180円</td><td class="num nw">2,320円</td></tr>
+          <tr><td>ラクマ(基本10%)</td><td class="num">▲300円</td><td class="num">▲180円</td><td class="num nw">2,520円</td></tr>
+          <tr class="best"><td>Yahoo!フリマ(5%) 最も手取りが多い</td><td class="num">▲150円</td><td class="num">▲180円</td><td class="num nw">2,670円</td></tr>
         </tbody>
       </table>
     </div>
@@ -392,13 +401,13 @@ footer.site-footer a { color: var(--accent); }
       <table style="white-space:nowrap">
         <thead><tr><th>販売価格</th><th class="num">メルカリ・ラクマ（手数料10%）</th><th class="num">Yahoo!フリマ（手数料5%）</th></tr></thead>
         <tbody>
-          <tr><td>300円</td><td class="num">60円</td><td class="num">75円</td></tr>
-          <tr><td>500円</td><td class="num">240円</td><td class="num">265円</td></tr>
-          <tr><td>1,000円</td><td class="num">690円</td><td class="num">740円</td></tr>
-          <tr><td>2,000円</td><td class="num">1,590円</td><td class="num">1,690円</td></tr>
-          <tr><td>3,000円</td><td class="num">2,490円</td><td class="num">2,640円</td></tr>
-          <tr><td>5,000円</td><td class="num">4,290円</td><td class="num">4,540円</td></tr>
-          <tr><td>10,000円</td><td class="num">8,790円</td><td class="num">9,290円</td></tr>
+          <tr><td>300円</td><td class="num nw">60円</td><td class="num nw">75円</td></tr>
+          <tr><td>500円</td><td class="num nw">240円</td><td class="num nw">265円</td></tr>
+          <tr><td>1,000円</td><td class="num nw">690円</td><td class="num nw">740円</td></tr>
+          <tr><td>2,000円</td><td class="num nw">1,590円</td><td class="num nw">1,690円</td></tr>
+          <tr><td>3,000円</td><td class="num nw">2,490円</td><td class="num nw">2,640円</td></tr>
+          <tr><td>5,000円</td><td class="num nw">4,290円</td><td class="num nw">4,540円</td></tr>
+          <tr><td>10,000円</td><td class="num nw">8,790円</td><td class="num nw">9,290円</td></tr>
         </tbody>
       </table>
     </div>
